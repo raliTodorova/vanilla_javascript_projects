@@ -1,3 +1,3 @@
-_Simple Background Color Changer_
+Vanilla JavaScript Challenges
 
-html, css, javascript
+1. Simple Background Color Change
