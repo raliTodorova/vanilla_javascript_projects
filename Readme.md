@@ -6,6 +6,7 @@ Vanilla JavaScript Challenges
 4. Pass-the-message
 5. Counter
 6. Image-slider
+7. Testimonials
 
 
 
