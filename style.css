@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: serif;
+  font-size: 16px;
+  color: #333;
+  background-color: rgb(247, 218, 205);
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+div.card {
+  width: 600px;
+
+  padding: 30px;
+  background-color: rgb(58, 160, 160, 0.8);
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  font-size: 20px;
+}
+div.quote {
+  display: flex;
+  flex-direction: column;
+}
+div.quote p {
+  text-indent: 20px;
+  padding: 10px;
+  text-align: justify;
+}
+div.quote p::first-letter {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-right: 3px;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-align: right;
+  padding-top: 20px;
+}
+i.right {
+  align-self: flex-end;
+}
+
+button {
+  width: 600px;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 7px;
+  border: none;
+  color: rgb(58, 160, 160, 0.8);
+  font-size: 25px;
+  margin-top: 20px;
+  background-color: white;
+  transition: all 0.3s linear;
+  font-weight: 700;
+}
+button:hover {
+  background-color: rgb(58, 160, 160, 0.8);
+  color: white;
+  cursor: pointer;
+}
+button:active,
+button:focus {
+  transform: scale(0.98);
+  outline: none;
+}
