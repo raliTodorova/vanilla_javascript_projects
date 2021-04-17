@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  background-color: rgb(61, 104, 161);
+  padding: 30px;
+  border-radius: 7px;
+}
+div.last-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+p.message {
+  margin-top: 10px;
+  text-align: center;
+}
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: 20px 0;
+}
+form input {
+  font-size: 20px;
+  padding: 3px;
+  padding-left: 10px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: solid 1px #888;
+  border-radius: 10px;
+  outline: none;
+}
+form button {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 700;
+  color: orange;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.2s linear;
+  border: none;
+}
+form button:hover {
+  color: white;
+  background-color: orange;
+}
+form button:active,
+form button:focus {
+  outline: none;
+  transform: scale(0.98);
+}
+.error {
+  color: red;
+  font-size: 25px;
+  padding: 10px;
+}
+.message {
+  padding: 10px;
+}
+.message::first-letter {
+  text-transform: uppercase;
+}
