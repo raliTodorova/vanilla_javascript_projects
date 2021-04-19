@@ -7,6 +7,7 @@ Vanilla JavaScript Challenges
 5. Counter
 6. Image-slider
 7. Testimonials
+8. 8.Filter Items
 
 
 
