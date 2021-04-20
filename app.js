@@ -21,19 +21,19 @@ const products = [
     name:'Club Hammer',
     category:'hammer',
     price:5,
-    image:'./images/club_hamer.jpg'
+    image:'./images/club_hammer.jpg'
   },
   {
     name:'Combination Wrench',
     category:'wrench',
     price:5,
-    image:'combination_wrench.jpg'
+    image:'./images/combination_wrench.jpg'
   },
   {
     name:'Flare Nut Wrench',
     category:'wrench',
     price:5,
-    image:'flare_nut_wrench.jpg'
+    image:'./images/flare_nut_wrench.jpg'
   },
   {
     name:'Flat Screwdriver',
@@ -63,7 +63,7 @@ const products = [
     name:'Hex Key Screwdriver',
     category:'screwdriver',
     price:8.05,
-    image:'hex_key_screwdriver.jpg'
+    image:'./images/hex_key_screwdriver.jpg'
   },
   {
     name:'Hudson Bay Axe',
@@ -102,7 +102,61 @@ const products = [
     image:'./images/wrench.jpg'
   }
 ]
-
+const items = document.querySelector('.items')
 const filters = document.querySelector('.filters')
 const searchBar = document.querySelector('.search-bar input')
-const searchBtn = document.querySelector('.search')
+
+
+
+let filteredProducts=[...products];
+addItemsToHTML(filteredProducts)
+//filterProducts by categories
+filters.addEventListener('click', (e)=>{
+    filteredProducts = products.filter(product=>product.category===`${e.target.innerHTML}`)
+    
+})
+  //dynamically add products to HTML
+  function addItemsToHTML(array){
+    array.forEach(product=>{
+     items.innerHTML+=`<div class="item">
+        <div class="img-container"><img src="${product.image}" alt="${product.name}"></div>
+        <div class="details">
+          <h4 class="item-name">${product.name}</h4>
+          <h4><span class="price">${product.price}</span>  lv.</h4>
+        </div> 
+      </div>`
+
+  })
+  }
+  
+
+//Getting unique categories from the products object
+let categories = [];
+products.forEach(product=>{
+  if(!categories.includes(product.category)){
+    categories.push(product.category)
+  }
+  
+})
+ 
+//append categories to div.filters
+  categories.forEach(function (category){
+    let a = document.createElement('a');
+    a.textContent = category;
+    filters.appendChild(a)
+  })
+
+
+
+
+
+//filter products by input
+// searchBar.addEventListener('keyup',()=>{
+//   const term = searchBar.value.trim()
+//   filteredProducts = products.filter(product=>{
+    
+//   }
+
+//   )
+// })
+
