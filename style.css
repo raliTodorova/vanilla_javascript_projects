@@ -8,7 +8,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
 }
-
+#hero a,
+#about a {
+  text-decoration: none;
+  color: inherit;
+}
 nav {
   display: flex;
   justify-content: space-between;

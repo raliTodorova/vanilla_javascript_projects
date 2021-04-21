@@ -108,15 +108,34 @@ const searchBar = document.querySelector('.search-bar input')
 
 
 
+
 let filteredProducts=[...products];
 addItemsToHTML(filteredProducts)
 //filterProducts by categories
 filters.addEventListener('click', (e)=>{
     filteredProducts = products.filter(product=>product.category===`${e.target.innerHTML}`)
-    
+    addItemsToHTML(filteredProducts)
+    if(e.target.innerHTML==='all'){
+      filteredProducts=[...products]
+      addItemsToHTML(filteredProducts)
+    }
 })
+
+searchBar.addEventListener('keyup', ()=>{
+  let regEx=new RegExp(`${searchBar.value}+`,'gi')
+  console.log(regEx.test('s'), regEx);
+  products.forEach(product=>{
+    if(regEx.test(product.name)){
+      filteredProducts.push(product)
+    } 
+  })
+    addItemsToHTML(filteredProducts)
+})
+
   //dynamically add products to HTML
   function addItemsToHTML(array){
+    items.innerHTML='';
+    filteredProducts=[];
     array.forEach(product=>{
      items.innerHTML+=`<div class="item">
         <div class="img-container"><img src="${product.image}" alt="${product.name}"></div>
@@ -127,6 +146,7 @@ filters.addEventListener('click', (e)=>{
       </div>`
 
   })
+  
   }
   
 
