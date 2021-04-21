@@ -156,6 +156,8 @@ li a:hover {
   align-items: center;
   justify-content: center;
   padding: 50px 20px 50px 20px;
+  position: relative;
+  z-index: 1;
 }
 #store h2 {
   font-size: 40px;
@@ -238,4 +240,59 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.modal {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  min-width: 800px;
+  min-height: 400px;
+  width: 80vw;
+  height: 80vh;
+  box-shadow: 3px 5px 8px black;
+  background: rgb(131, 67, 31);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+  visibility: hidden;
+}
+.modal::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.356);
+  top: -200px;
+  left: -200px;
+  z-index: -1;
+}
+.exit {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 50px;
+  cursor: pointer;
+  text-shadow: 1px 2px 5px black;
+}
+.exit:hover {
+  color: rgb(153, 106, 53);
+}
+.modal-img {
+  object-fit: cover;
+  width: 100%;
+}
+.modal-img-container {
+  min-width: 500px;
+  min-height: 400px;
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.modal .left,
+.modal .right {
+  font-size: 35px;
+  padding: 0 5%;
+  cursor: pointer;
 }
