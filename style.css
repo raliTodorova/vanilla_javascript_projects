@@ -159,6 +159,7 @@ li a:hover {
   position: relative;
   z-index: 1;
 }
+
 #store h2 {
   font-size: 40px;
 }
@@ -260,12 +261,12 @@ footer {
 .modal::before {
   content: "";
   position: absolute;
-  width: 150%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 255, 255, 0.356);
   top: -200px;
   left: -200px;
-  z-index: -1;
+  z-index: 1;
 }
 .exit {
   position: absolute;
@@ -295,4 +296,7 @@ footer {
   font-size: 35px;
   padding: 0 5%;
   cursor: pointer;
+}
+.visibility {
+  visibility: visible;
 }

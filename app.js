@@ -114,6 +114,7 @@ addItemsToHTML(filteredProducts)
 //filterProducts by categories
 filters.addEventListener('click', (e)=>{
     filteredProducts = products.filter(product=>product.category===`${e.target.innerHTML}`)
+    
     addItemsToHTML(filteredProducts)
     if(e.target.innerHTML==='all'){
       filteredProducts=[...products]
@@ -167,16 +168,31 @@ products.forEach(product=>{
   })
 
 
+//Modals 
+const modal = document.querySelector('.modal')
+const exit = document.querySelector('.exit');
+const item = document.querySelectorAll('.item')
+console.log(modal.style.backgroundColor);
 
+//toggle visibility
+function toggleVisibility(el){
+ if(el.classList.contains('visibility')){
+   el.classList.remove('visibility')
+ }else{
+    el.classList.add('visibility')
+ }
+}
 
-
-//filter products by input
-// searchBar.addEventListener('keyup',()=>{
-//   const term = searchBar.value.trim()
-//   filteredProducts = products.filter(product=>{
+exit.addEventListener('click', ()=>{
+  toggleVisibility(modal)
+})
+// console.log(item[0]);
+// item.forEach(item=>{
+//   item.addEventListener('click',()=>{
+//   toggleVisibility(modal)
     
-//   }
-
-//   )
+//   })
 // })
-
+item[0].addEventListener('click', ()=>{
+  toggleVisibility(modal)
+})
